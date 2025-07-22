@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Changer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav_bar{
+            border: 2px solid rgb(218, 203, 203);
+            height: 6vh;
+            display: flex;
+            justify-content:flex-end;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav_buttons{
+            width: 90px;
+            height: 30px;
+            border: 1px solid rgb(163, 152, 152);
+            border-radius: 5px;
+            background-color: rgb(231, 226, 230);
+            font-weight: bold;
+        }
+        #content{
+            margin-top: 40px;
+        }
+        .color_container{
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .colors{
+            border: 2px solid black;
+            width: 12vw;
+            height: 10vh;
+            margin: 15px;
+        }
+        #Grey{
+            background-color: rgb(174, 160, 160);
+        }
+        #Green{
+            background-color: green;
+        }
+        #Blue{
+            background-color: rgb(49, 49, 192);
+        }
+        #Yellow{
+            background-color: rgb(231, 231, 64);
+        }
+        #info{
+            font-weight: bold;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav id = nav_bar>
+        <button class="nav_buttons">Home</button>
+        <button class="nav_buttons">Github_repo</button>
+    </nav>
+    <div id="content">
+        <p>
+            <h2>Color Scheme Switcher</h2>
+        </p>
+        <div class="color_container">
+            <div class="colors" id="Grey"></div>
+            <div class="colors" id="Green"></div>
+            <div class="colors" id="Blue"></div>
+            <div class="colors" id="Yellow"></div>
+        </div>
+        <span id="info">Try Clicking on one of the colors above to change the back-ground color of this page </span>
+    </div>
+</body>
+<script>
+   const button = document.querySelectorAll(".colors")
+   const body = document.querySelector("body")
+   button.forEach((but) => {
+    console.log(but)
+    but.addEventListener("click",function(e) {
+        console.log(e);
+        console.log(e.target);
+        if(e.target.id == "Grey"){
+            body.style.backgroundColor = e.target.id
+        }
+        if(e.target.id == "Blue"){
+            body.style.backgroundColor = e.target.id
+        }
+        if(e.target.id == "Green"){
+            body.style.backgroundColor = e.target.id
+        }
+        if(e.target.id == "Yellow"){
+            body.style.backgroundColor = e.target.id
+        }
+    })
+   })
+
+   
+</script>
+</html>
